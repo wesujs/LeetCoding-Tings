@@ -25,3 +25,20 @@ Memory: 17.2 MB
 Beats: 94.34%
 
 """
+'''
+Objective: The objective of this code is to find two numbers in the given "numbers" list that add up to the given "target" value.
+
+Thought Process:
+1. Initialize two pointers: We initialize two pointers, "lp" and "rp". "lp" points to the first element of the list (index 0), and "rp" points to the last element (index "len(numbers) - 1"). These pointers will be used to scan the list from both ends.
+2. Loop through the list: We use a "while" loop that continues as long as "lp" is less than or equal to "rp". This condition ensures that the pointers do not cross each other.
+3. Calculate the sum of the elements: In each iteration, we calculate the sum of the elements at the current "lp" and "rp" indices and store it in the variable "sumx".
+4. Check if the sum equals the target: We check if "sumx" is equal to the "target". If it is, that means we have found the two numbers that add up to the target.
+5. Return the result: If the sum is equal to the target, we increment both "lp" and "rp" by 1 (since the problem is 1-indexed), create two new variables "newl" and "newr", and set them to "lp + 1" and "rp + 1", respectively. Then, we return the list "[newl, newr]", which contains the indices of the two numbers that sum up to the target.
+6. Adjust the pointers: If the sum is greater than the target, we decrement "rp" by 1 to reduce the sum, as the list is sorted in ascending order. If the sum is less than the target, we increment "lp" by 1 to increase the sum.
+7. Repeat: The loop continues until either the target sum is found and returned, or the pointers cross each other, indicating that no such pair exists.
+8. Return an empty list if no pair found: If the loop ends without finding a pair, the function returns an empty list "[]", indicating that there are no two numbers in the list that add up to the target.
+
+Complexity Analysis:
+- Time Complexity: The loop runs in O(n) time, where "n" is the number of elements in the "numbers" list. In each iteration, the pointers either move towards each other or change by a constant amount, and the loop terminates when the pointers cross each other or find the target sum.
+- Space Complexity: The space complexity is O(1) because the function uses a constant amount of additional memory to store the pointers and temporary variables, regardless of the size of the input list.
+'''
