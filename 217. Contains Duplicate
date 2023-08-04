@@ -1,0 +1,36 @@
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        hash = set()
+
+
+        if len(set(nums)) < len(nums):
+            return True
+        return False
+
+"""
+Runtime: 479 ms
+Beats: 95.38%
+
+Memory: 17.2 MB
+Beats: 79.54%
+
+"""
+
+'''
+Objective: The objective of this code is to determine whether the given list of integers "nums" contains any duplicates.
+
+Thought Process:
+1. Initialize a set: We create an empty set called "hash" to store unique elements from the "nums" list.
+2. Convert the list to a set: By converting the "nums" list into a set using `set(nums)`, we remove any duplicates from the list and get only unique elements.
+3. Compare lengths: We check if the length of the set of unique elements is less than the length of the original "nums" list.
+   - If the length of the set is less than the length of the list, that means there are duplicate elements in "nums".
+   - If the length of the set is equal to the length of the list, there are no duplicates in "nums".
+
+4. Return the result: If there are duplicates, the function returns `True`; otherwise, it returns `False`.
+
+Complexity Analysis:
+- Time Complexity: The time complexity of this function is O(n), where "n" is the number of elements in the "nums" list. The `set()` operation converts the list into a set, which takes O(n) time, and comparing the lengths takes constant time.
+- Space Complexity: The space complexity is O(n) because we use a set to store unique elements, and in the worst case, the set can contain all elements from the "nums" list.
+
+Note: The function is defined inside a class, but it doesn't make use of any instance variables or methods specific to the class. It could be a static method (marked with `@staticmethod`) instead of an instance method.
+'''
